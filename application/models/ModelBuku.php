@@ -37,4 +37,39 @@ class ModelBuku extends CI_Model
         $this->db->from('buku');
         return $this->db->get()->row($field);
     }
+
+    ///Manajemen kategori
+    public function getKategori()
+    {
+        return $this->get('kategori');
+    }
+
+    public function kategoriWhere($where)
+    {
+        return $this->db->get_where('kategori',$where);
+    }
+
+    public function simpanKategori($data=null)
+    {
+        $this->db->insert('kategori',$data);
+    }
+
+    public function updateKategori($data=null,$where=null)
+    {
+        $this->db->update('kategori',$data,$where);
+    }
+
+    public function hapusKategori($where=null)
+    {
+        $this->db->delete('kategori',$where);
+    }
+
+    public function joinKategoriBuku($where)
+    {
+        $this->db->select('buku.id_kategori,kategori.kategori');
+        $this->db->from('buku');
+        $this->db->join('kategori','kategori.id_kategori=buku.id_kategori');
+        $this->db->where($where);
+        return $this->db->get();
+    }
 }

@@ -22,4 +22,19 @@ class ModelBuku extends CI_Model
     {
         $this->db->update('buku',$data,$where);
     }
+
+    public function hapusBuku($where=null)
+    {
+        $this->db->delete('buku',$where);
+    }
+
+    public function total($field,$where)
+    {
+        $this->db->select_sum($field);
+        if(!empty($where)&& count($where)>0){
+            $this->db->where($where);
+        }
+        $this->db->from('buku');
+        return $this->db->get()->row($field);
+    }
 }

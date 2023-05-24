@@ -8,6 +8,7 @@ class Autentifikasi extends CI_controller
         parent::__construct();
    
         $this->load->model('ModelUser');
+        $this->load->model('ModelBuku');
     }
 
     public function index()

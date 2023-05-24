@@ -63,7 +63,7 @@
                       </div>
                     </div>
                     <div class="col-auto">
-                      <a href="<?= base_url('user'); ?>"<i class="fas fa-user-tag fa-3x text-success"></i></a>
+                      <a href="<?= base_url('user'); ?>"><i class="fas fa-user-tag fa-3x text-success"></i></a>
                     </div>
                   </div>
                 </div>
@@ -77,10 +77,16 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Buku Yang diBooking</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php
+                          
+                          $where=['dibooking !=0'];
+                          $totaldibooking=$this->ModelBuku->total('dibooking',$where);
+
+                          echo $totaldibooking;
+                          ?></div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    <a href="<?= base_url('user'); ?>"><i class="fas fa-shopping-cart fa-3x text-danger"></i></a>
                     </div>
                   </div>
                 </div>

@@ -5,7 +5,7 @@ class ModelBuku extends CI_Model
 {
     public function getBuku()
     {
-        return $this->get('buku');
+        return $this->db->get('buku');
     }
 
     public function bukuWhere($where)

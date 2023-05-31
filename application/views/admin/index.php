@@ -154,12 +154,12 @@
                   foreach($buku as $b){ ?>
                   <tr>
                     <td><?= $i++; ?></td>
-                    <td><?= $a['judul_buku']; ?></td>
-                    <td><?= $a['pengarang']; ?></td>
-                    <td><?= $a['penerbit']; ?></td>
-                    <td><?= $a['tahun_terbit']; ?></td>
-                    <td><?= $a['isbn']; ?></td>
-                    <td><?= $a['stok']; ?></td>
+                    <td><?= $b['judul_buku']; ?></td>
+                    <td><?= $b['pengarang']; ?></td>
+                    <td><?= $b['penerbit']; ?></td>
+                    <td><?= $b['tahun_terbit']; ?></td>
+                    <td><?= $b['isbn']; ?></td>
+                    <td><?= $b['stok']; ?></td>
                   </tr>
                   <?php } ?>
                 </tbody>

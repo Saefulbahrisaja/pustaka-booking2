@@ -31,11 +31,9 @@ class Autentifikasi extends CI_controller
             $data['judul']='login';
             $data['user']='';
 
-            $this->load->view('admin/header',$data);
-            $this->load->view('admin/sidebar');
-            $this->load->view('admin/topbar');
-            $this->load->view('admin/index');
-            $this->load->view('admin/footer');
+            $this->load->view('templates/aute_header',$data);
+            $this->load->view('admin/login');
+            $this->load->view('templates/aute_footer');
         }else{
             $this->_login();
         }
